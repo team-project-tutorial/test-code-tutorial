@@ -48,9 +48,8 @@ ON COLUMN p_board.updated_at IS '게시글 마지막 수정 시간';
         - [ ] jpa 환경 설정 구성
 - [ ] 게시글 Repository 정의 및 TC 작성
     - [ ] 게시글 영속화를 위한 JpaRepository 정의
-    - [ ] 게시글 Entity 저장 부 구현
+    - [ ] 게시글 Entity 생성을 위한 정적 팩터리 메서드 구현
     - [ ] @DataJpaTest를 이용한 게시글 저장 TC 작성
-    - [ ] 특정 게시글 Entity 조회 부 구현
     - [ ] @DataJpaTest를 이용한 특정 게시글 조회 TC 작성
     - [ ] 존재 하지 않는 게시글 조회 시 예외 발생 TC 작성
 
