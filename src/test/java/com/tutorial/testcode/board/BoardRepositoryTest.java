@@ -15,6 +15,7 @@ import org.springframework.test.context.ActiveProfiles;
 import com.tutorial.testcode.board.config.JpaConfig;
 import com.tutorial.testcode.board.domain.Board;
 
+@DisplayName("Repository:Board")
 @Import(JpaConfig.class)
 @DataJpaTest
 @ActiveProfiles("test")
