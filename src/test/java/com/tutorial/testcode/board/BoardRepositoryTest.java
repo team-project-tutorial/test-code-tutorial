@@ -33,4 +33,18 @@ class BoardRepositoryTest {
 		assertThat(board.getCreatedAt()).isNotNull();
 		assertThat(board.getUpdatedAt()).isNotNull();
 	}
+
+	@Test
+	@DisplayName("특정 게시글 조회 TC 작성")
+	void findById() {
+		// Given
+		Board board = Board.of("제목", "내용");
+		boardRepository.save(board);
+
+		// When
+		Board findBoard = boardRepository.findById(board.getId()).orElseThrow();
+
+		// Then
+		assertThat(findBoard.getId()).isEqualTo(board.getId());
+	}
 }
