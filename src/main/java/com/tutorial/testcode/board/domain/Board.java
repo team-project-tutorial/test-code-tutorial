@@ -15,6 +15,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -40,4 +41,17 @@ public class Board {
 
 	@LastModifiedDate
 	private LocalDateTime updatedAt;
+
+	@Builder
+	private Board(String title, String content) {
+		this.title = title;
+		this.content = content;
+	}
+
+	public static Board of(String title, String content) {
+		return Board.builder()
+			.title(title)
+			.content(content)
+			.build();
+	}
 }
