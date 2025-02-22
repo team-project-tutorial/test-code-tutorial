@@ -1,6 +1,7 @@
 package com.tutorial.testcode.board.domain;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.UUID;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -53,5 +54,18 @@ public class Board {
 			.title(title)
 			.content(content)
 			.build();
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Board board = (Board)o;
+		return Objects.equals(id, board.id);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(id);
 	}
 }
