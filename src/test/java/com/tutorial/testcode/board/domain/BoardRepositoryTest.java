@@ -1,4 +1,4 @@
-package com.tutorial.testcode.board;
+package com.tutorial.testcode.board.domain;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 
 import com.tutorial.testcode.board.config.JpaConfig;
-import com.tutorial.testcode.board.domain.Board;
 
 @DisplayName("Repository:Board")
 @Import(JpaConfig.class)
