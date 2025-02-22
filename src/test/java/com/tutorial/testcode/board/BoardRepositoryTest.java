@@ -2,6 +2,9 @@ package com.tutorial.testcode.board;
 
 import static org.assertj.core.api.Assertions.*;
 
+import java.util.NoSuchElementException;
+import java.util.UUID;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +49,18 @@ class BoardRepositoryTest {
 
 		// Then
 		assertThat(findBoard.getId()).isEqualTo(board.getId());
+	}
+
+	@Test
+	@DisplayName("[예외]존재 하지 않는 게시글 조회")
+	void throwException_whenBoardIsNotExist() {
+		// Given
+		UUID notExistBoardId = UUID.randomUUID();
+
+		// When & Then
+		assertThatExceptionOfType(NoSuchElementException.class)
+			.isThrownBy(() -> boardRepository.findById(notExistBoardId)
+				.orElseThrow()
+			);
 	}
 }
